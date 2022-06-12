@@ -46,4 +46,4 @@ Previous features:
 - [ ] State of mind
 
 
-****Extensive documentation for both the team and developers as well as players follows demnäst.****
+****Extensive documentation for both the team and developers as well as players follows soon.****
