@@ -47,5 +47,3 @@ Previous features:
 
 
 ****Extensive documentation for both the team and developers as well as players follows demnäst.****
-
-Translated with www.DeepL.com/Translator (free version)
