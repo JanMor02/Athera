@@ -1,0 +1,34 @@
+# Config AtheraSurvival
+
+# List of effects (for the effects at too low values): https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
+# List of Foods: https://minecraft.fandom.com/wiki/Food#Foods
+
+# The following values are from this page: https://minecraft.fandom.com/de/wiki/Hunger#Ersch.C3.B6pfung
+# The values determine how much is deducted from the respective action.
+exhaustion_types:
+  swimming: 0.01
+  break_block: 0.005
+  sprinting: 0.1
+  jump: 0.05
+  hit_mob: 0.1
+
+# Adds a lore to the item to indicate the nutrition
+show_nutrition_in_item_lore: true
+
+# Decides whether or not to apply a multiplier depending on the difficulty level
+use_difficulty_multipliers: true
+
+# Defined items that are drinkable
+drinkables:
+  # Multiplier for exhaustion 
+  exhaustion_multiplier: 2
+  #Format:
+  # <name>:
+  #   nutrition: <0-20>
+  #   saturation: <0-20>
+  #   quality: <dirty|salty|boiled|pure>
+  #   display_name: "<some name here>" - you can use the &-codes :)
+  dirty_water:
+    nutrition: 8
+    saturation: 4
+    display_name: "&"

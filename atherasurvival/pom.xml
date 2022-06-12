@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Set parent pom to get properties -->
+    <parent>
+        <groupId>net.athera.atheramc</groupId>
+        <artifactId>atheramc</artifactId>
+        <version>${system-version}</version>
+    </parent>
+
+    <groupId>net.athera.atherasurvival</groupId>
+    <artifactId>atherasurvival</artifactId>
+    <version>${survival-version}</version>
+
+    <packaging>jar</packaging>
+
+    <!-- Repositories -->
+    <repositories>
+        <!-- Spigot repository -->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        
+        <!-- Local repository -->
+        <repository>
+            <id>athera-repo</id>
+            <url>file:///${project.basedir}/out</url>
+        </repository>
+    </repositories>
+
+    <!-- Dependencies -->
+    <dependencies>
+        <!-- Spigot API -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.14.4-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Athera Core API -->
+        <dependency>
+            <artifactId>atheracore</artifactId>
+            <groupId>net.athera.atheracore</groupId>
+            <version>${core-version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!-- Add resources-folder to build pipeline -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>13</source>
+                    <target>13</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <configuration>
+                    <tasks>
+                        <!-- Copy jars to Jans devserver location (fuck i dont want to copy this every time) will fire an error on other systems, so comment when merging in master -->
+                        <copy file="target/atherasurvival-${survival-version}.jar" todir="E:\OneDrive\Coding\Privat\Java\Minecraft\#Server\Spigot 1.14.4\plugins"/>
+                        <!-- Copy jars to project root folder -->
+                        <copy file="target/atherasurvival-${survival-version}.jar" todir="../out/"/>
+                    </tasks>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,5 @@
+name: atheracore
+version: ${core-version}
+author: Play4Lif3
+main: net.atheramc.atheracore.Main
+api-version: '1.14'
