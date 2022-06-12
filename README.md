@@ -6,7 +6,7 @@
 >AtheraCore ist das Kernstück des Servers. Es kümmert sich um die verwaltung der Daten für die einzelnen untersysteme.
 >Sie wird als API in jedes Projekt implementiert.
 
-Bisherige funktionen:
+funktionen:
 - [ ] Datenbank
 - [ ] Usermanagement (Luckperms brücke)
 - [ ] Konfigurationsverwaltung
@@ -40,7 +40,7 @@ Functions:
 ### **AtheraSurvival**
 > AtheraSurvival implements game mechanisms from real life. It forces players to eat a balanced and healthy diet, otherwise they get negative effects.
 
-Previous features:
+Functions:
 - [X] Thirst
 - [ ] Food (nutritional values: fat, proteins and carbohydrates)
 - [ ] State of mind
